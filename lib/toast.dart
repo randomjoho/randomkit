@@ -7,16 +7,15 @@ import 'package:randomkit/widget/toast/icon_text.dart';
 import 'package:randomkit/widget/toast/loading.dart';
 
 import 'animation/fade.dart';
-import 'const/heytea_const.dart';
+import 'const/random_const.dart';
+ 
 
-final HeyTeaToastInit = BotToastInit;
+class RandomToastNavigatorObserver extends BotToastNavigatorObserver {}
 
-class HeyTeaToastNavigatorObserver extends BotToastNavigatorObserver {}
-
-class HeyTeaToastContainer extends StatelessWidget {
+class RandomToastContainer extends StatelessWidget {
   final Widget child;
 
-  const HeyTeaToastContainer({
+  const RandomToastContainer({
     this.child,
   });
 
@@ -38,7 +37,7 @@ class HeyTeaToastContainer extends StatelessWidget {
   }
 }
 
-class HeyTeaToast {
+class RandomToast {
   static CancelFunc showLoading(
     String text, {
     ValueListenable<String> textListenable,

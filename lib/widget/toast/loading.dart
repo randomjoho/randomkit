@@ -16,7 +16,7 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HeyTeaToastContainer(
+    return RandomToastContainer(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[

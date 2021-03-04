@@ -26,8 +26,8 @@ class ErrorUtils {
         final DioError dioError = originalError;
         message = dioError.toDisplayText();
         break;
-      case HeyTeaAPIException:
-        final apiException = originalError as HeyTeaAPIException;
+      case RandomAPIException:
+        final apiException = originalError as RandomAPIException;
         message = apiException.message;
         break;
       case HttpException:
@@ -44,7 +44,7 @@ class ErrorUtils {
 
   static int apiExceptionCodeFrom(dynamic error) {
     final err = ErrorUtils.errorFrom(error);
-    if (err is HeyTeaAPIException) {
+    if (err is RandomAPIException) {
       return err.code;
     }
 

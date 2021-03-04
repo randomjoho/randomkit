@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-extension HeyTeaDioError on DioError {
+extension RandomDioError on DioError {
 
   String toDisplayText() {
     switch (type) {

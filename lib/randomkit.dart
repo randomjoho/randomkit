@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 class RandomKit {
   static const String packageName = 'randomkit';
 
-  static HeyTeaKitConfig config;
+  static RandomKitConfig config;
 
   static const MethodChannel _channel =
       const MethodChannel('randomkit');
@@ -18,11 +18,11 @@ class RandomKit {
 }
 
 
-class HeyTeaKitConfig {
+class RandomKitConfig {
   final Future<List<String>> apiBaseUrlsGetter;
   final Future<Map<String, dynamic>> apiHeadersGenerator;
 
-  const HeyTeaKitConfig({
+  const RandomKitConfig({
     this.apiBaseUrlsGetter,
     this.apiHeadersGenerator,
   });

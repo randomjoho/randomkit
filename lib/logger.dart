@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 
-class HeyTeaLogger {
-  static final _shared = HeyTeaLogger._internal();
+class RandomLogger {
+  static final _shared = RandomLogger._internal();
   final _logger = Logger(
     printer: PrettyPrinter(
       // number of method calls to be displayed
@@ -23,11 +23,11 @@ class HeyTeaLogger {
   /// http://www.dartdoc.cn/guides/language/language-tour#factory-constructors
   /// 使用 factory 关键字标识类的构造函数将会令该构造函数变为工厂构造函数，这将意味着使用该构造函数构造类的实例时并非总是会返回新的实例对象。
   /// 例如，工厂构造函数可能会从缓存中返回一个实例，或者返回一个子类型的实例。
-  factory HeyTeaLogger() {
+  factory RandomLogger() {
     return _shared;
   }
 
-  HeyTeaLogger._internal() {
+  RandomLogger._internal() {
     if (kDebugMode) {
       Logger.level = Level.debug;
     } else if (kProfileMode) {

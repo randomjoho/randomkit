@@ -57,7 +57,7 @@ class BaseResponse<T> {
         dataMap = jsonDecode(data);
       } catch (error) {
         // 非标准的JSON，跳过
-        HeyTeaLogger().e("Can't parse data to json map. data: $data", error);
+        RandomLogger().e("Can't parse data to json map. data: $data", error);
         return null;
       }
     } else {
@@ -68,7 +68,7 @@ class BaseResponse<T> {
       return BaseResponse.fromJson(dataMap.cast());
     } catch (error) {
       // 非标准的BaseResponse，跳过
-      HeyTeaLogger().e("Can't convert to BaseResponse. Skipped.", error);
+      RandomLogger().e("Can't convert to BaseResponse. Skipped.", error);
     }
 
     return null;

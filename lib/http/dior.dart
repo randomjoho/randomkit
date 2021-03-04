@@ -25,7 +25,7 @@ class Dior {
     );
 
     final dio = Dio(options);
-    dio.interceptors.add(HeyTeaInterceptor());
+    dio.interceptors.add(RandomInterceptor());
     if (kDebugMode) {
       // 开启请求日志
       dio.interceptors.add(LogInterceptor(

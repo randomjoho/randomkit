@@ -3,7 +3,7 @@ import 'package:randomkit/entity/response/base_response.dart';
 import 'package:randomkit/exception/api_exception.dart';
 import 'package:randomkit/randomkit.dart';
 
-class HeyTeaInterceptor extends Interceptor {
+class RandomInterceptor extends Interceptor {
   static int _lastTimestamp;
   static int get lastTimestamp => _lastTimestamp;
   static set lastTimestamp(value) {
@@ -52,7 +52,7 @@ class HeyTeaInterceptor extends Interceptor {
           request: response.request,
           response: response,
           type: DioErrorType.RESPONSE,
-          error: HeyTeaAPIException(
+          error: RandomAPIException(
             entity.code,
             message: entity.message,
           ),
@@ -75,7 +75,7 @@ class HeyTeaInterceptor extends Interceptor {
           request: err.request,
           response: err.response,
           type: DioErrorType.RESPONSE,
-          error: HeyTeaAPIException(
+          error: RandomAPIException(
             entity.code,
             message: entity.message,
           ),
