@@ -8,7 +8,10 @@ import 'package:randomkit/widget/toast/loading.dart';
 
 import 'animation/fade.dart';
 import 'const/random_const.dart';
- 
+
+
+final RandomToastInit = BotToastInit;
+
 
 class RandomToastNavigatorObserver extends BotToastNavigatorObserver {}
 
