@@ -10,7 +10,7 @@ import 'package:flutter/foundation.dart';
 /// More about zones:
 /// - https://api.dart.dev/stable/dart-async/Zone-class.html
 /// - https://www.dartlang.org/articles/libraries/zones
-class HeyTeaBugReporter {
+class AppBugReporter {
   /// 创建处理异常的函数
   static void Function(Object error, StackTrace stack) onError = (error, stack) async {
     return onReportError?.call(
