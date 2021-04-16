@@ -4,8 +4,29 @@ import 'dart:typed_data';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-
+import 'dart:ui' as ui show window;
 class UIKit {
+
+  pp(double x) {
+    return x * uiFactor;
+  }
+
+
+  static double get uiFactor {
+    return width / 375;
+  }
+
+  static double get width {
+    MediaQueryData mediaQuery = MediaQueryData.fromWindow(ui.window);
+    return mediaQuery.size.width;
+  }
+
+  static double get height {
+    MediaQueryData mediaQuery = MediaQueryData.fromWindow(ui.window);
+    return mediaQuery.size.height;
+  }
+
+
   static CupertinoButton onClickBtn({
     Key key,
     @required Widget child,
