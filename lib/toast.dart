@@ -157,6 +157,7 @@ class RandomToast {
           child: Text(
             '${text}',
             style: TextStyle(color: Colors.white, fontSize: 17),
+            textAlign: TextAlign.center,
           ),
           width: 268,
           padding: EdgeInsets.symmetric(vertical: 19,horizontal: 20),
