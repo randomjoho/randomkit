@@ -9,9 +9,7 @@ import 'package:randomkit/widget/toast/loading.dart';
 import 'animation/fade.dart';
 import 'const/random_const.dart';
 
-
 final RandomToastInit = BotToastInit;
-
 
 class RandomToastNavigatorObserver extends BotToastNavigatorObserver {}
 
@@ -129,7 +127,8 @@ class RandomToast {
         ),
       ),
       animationDuration: RandomConst.toastAnimationDuration,
-      wrapToastAnimation: (AnimationController controller, CancelFunc _, Widget child) {
+      wrapToastAnimation:
+          (AnimationController controller, CancelFunc _, Widget child) {
         return FadeAnimation(
           controller: controller,
           child: child,
@@ -140,5 +139,31 @@ class RandomToast {
       backgroundColor: backgroundColor,
       duration: duration,
     );
+  }
+
+  static CancelFunc showText({
+    String text,
+    crossPage = false,
+    clickClose = false,
+    duration = RandomConst.toastDuration,
+  }) {
+    return showWidget(
+        UnconstrainedBox(child: Container(
+
+          decoration: BoxDecoration(
+              color: Color(0xBF1E1E1E),
+              borderRadius: BorderRadius.circular(14)),
+          alignment: Alignment.center,
+          child: Text(
+            '${text}',
+            style: TextStyle(color: Colors.white, fontSize: 17),
+          ),
+          width: 268,
+          padding: EdgeInsets.symmetric(vertical: 19,horizontal: 20),
+        ),),
+        crossPage: crossPage,
+        clickClose: clickClose,
+        backgroundColor: Colors.transparent,
+        duration: duration);
   }
 }
