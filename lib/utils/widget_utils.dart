@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'dart:ui' as ui show window;
 class UIKit {
 
-  pp(double x) {
+  static pp(double x) {
     return x * uiFactor;
   }
 
