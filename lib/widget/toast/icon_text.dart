@@ -32,7 +32,7 @@ class IconTextWidget extends StatelessWidget {
             ),
           if (text != null)
             Padding(
-              padding: const EdgeInsets.only(top: 8),
+              padding: const EdgeInsets.only(top: 20),
               child: Text(text),
             ),
         ],
