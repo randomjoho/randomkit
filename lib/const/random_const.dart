@@ -5,7 +5,7 @@ class RandomConst {
   static const toastBackgroundColor = Color(0x80131315);
   static const toastDuration = Duration(seconds: 2);
   static const toastIconSize = 66.0;
-  static const toastPadding = EdgeInsets.symmetric(vertical: 18, horizontal: 15);
+  static const toastPadding = EdgeInsets.symmetric(vertical: 30, horizontal: 30);
   static const toastRadius = BorderRadius.all(Radius.circular(12));
-  static const toastTextStyle = TextStyle(color: Colors.white, fontSize: 18);
+  static const toastTextStyle = TextStyle(color: Color(0xFF7782D1), fontSize: 18);
 }

@@ -26,8 +26,8 @@ class IconTextWidget extends StatelessWidget {
                 icon,
                 package: RandomKit.packageName,
               ),
-              width: 22,
-              height: 22,
+              width: 56,
+              height: 56,
               fit: BoxFit.contain,
             ),
           if (text != null)
