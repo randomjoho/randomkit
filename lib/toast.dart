@@ -40,12 +40,12 @@ class RandomToastContainer extends StatelessWidget {
 
 class RandomToast {
   static CancelFunc showLoading(
-    String text, {
-    ValueListenable<String> textListenable,
-    BackButtonBehavior backButtonBehavior = BackButtonBehavior.ignore,
-    crossPage = false,
-    clickClose = false,
-  }) {
+      String text, {
+        ValueListenable<String> textListenable,
+        BackButtonBehavior backButtonBehavior = BackButtonBehavior.ignore,
+        crossPage = false,
+        clickClose = false,
+      }) {
     return BotToast.showCustomLoading(
       toastBuilder: (_) => LoadingWidget(
         text,
@@ -57,11 +57,15 @@ class RandomToast {
     );
   }
 
+  static closeAll(){
+    BotToast.closeAllLoading();
+  }
+
   static CancelFunc showSuccess(
-    String text, {
-    crossPage = false,
-    clickClose = false,
-  }) {
+      String text, {
+        crossPage = false,
+        clickClose = false,
+      }) {
     return showIconText(
       icon: RandomRes.assets_toast_icon_done_png,
       text: text,
@@ -71,10 +75,10 @@ class RandomToast {
   }
 
   static CancelFunc showFailure(
-    String text, {
-    crossPage = false,
-    clickClose = false,
-  }) {
+      String text, {
+        crossPage = false,
+        clickClose = false,
+      }) {
     return showIconText(
       icon: RandomRes.assets_toast_icon_error_png,
       text: text,
@@ -84,10 +88,10 @@ class RandomToast {
   }
 
   static CancelFunc showError(
-    dynamic error, {
-    crossPage = false,
-    clickClose = false,
-  }) {
+      dynamic error, {
+        crossPage = false,
+        clickClose = false,
+      }) {
     final errMessage = ErrorUtils.messageFrom(error);
     return showFailure(
       errMessage,
@@ -113,12 +117,12 @@ class RandomToast {
   }
 
   static CancelFunc showWidget(
-    Widget child, {
-    crossPage = false,
-    clickClose = false,
-    Color backgroundColor = Colors.transparent,
-    duration = RandomConst.toastDuration,
-  }) {
+      Widget child, {
+        crossPage = false,
+        clickClose = false,
+        Color backgroundColor = Colors.transparent,
+        duration = RandomConst.toastDuration,
+      }) {
     return BotToast.showAnimationWidget(
       toastBuilder: (_) => SafeArea(
         child: Align(
