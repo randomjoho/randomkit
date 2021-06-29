@@ -26,13 +26,13 @@ class Dior {
 
     final dio = Dio(options);
     dio.interceptors.add(RandomInterceptor());
-    if (kDebugMode) {
+    // if (kDebugMode) {
       // 开启请求日志
       dio.interceptors.add(LogInterceptor(
         requestBody: true,
         responseBody: true,
       ));
-    }
+    // }
     // A dio transformer especially for flutter, by which the json decoding will be in background with [compute] function.
     dio.transformer = FlutterTransformer();
 
