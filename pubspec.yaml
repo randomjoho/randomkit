@@ -18,8 +18,8 @@ dependencies:
   # https://pub.dev/packages/dio
   dio: ^3.0.10
   # https://pub.dev/packages/dio_flutter_transformer
-  dio_flutter_transformer: 
-    git: https://github.com/randomjoho/dio_flutter_transformer.git
+  dio_flutter_transformer: ^3.0.2
+    
 
   # UI
   # https://pub.dev/packages/bot_toast
