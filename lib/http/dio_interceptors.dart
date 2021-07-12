@@ -15,7 +15,7 @@ class RandomInterceptor extends Interceptor {
 
   /// 在此处改造请求，统一加入Token
   @override
-  Future onRequest(RequestOptions options) async {
+  Future onRequest(RequestOptions options,RequestInterceptorHandler handler) async {
     if (await options.isFromBaseUrl()) {
       if (options.headers == null) {
         options.headers = {};
@@ -30,12 +30,12 @@ class RandomInterceptor extends Interceptor {
       }
     }
 
-    return super.onRequest(options);
+    return super.onRequest(options,handler);
   }
 
   @override
-  Future onResponse(Response response) async {
-    if (await response.request.isFromBaseUrl()) {
+  Future onResponse(Response response,ResponseInterceptorHandler handler) async {
+    if (await response.requestOptions.isFromBaseUrl()) {
       final entity = BaseResponse.tryParse(response.data);
 
       if (entity != null) {
@@ -49,9 +49,9 @@ class RandomInterceptor extends Interceptor {
 
         // 触发异常
         throw DioError(
-          request: response.request,
+          requestOptions: response.requestOptions,
           response: response,
-          type: DioErrorType.RESPONSE,
+          type: DioErrorType.response,
           error: RandomAPIException(
             entity.code,
             message: entity.message,
@@ -60,21 +60,21 @@ class RandomInterceptor extends Interceptor {
       }
     }
 
-    return super.onResponse(response);
+    return super.onResponse(response,handler);
   }
 
   @override
-  Future onError(DioError err) async {
-    if (err.type == DioErrorType.RESPONSE && await err.response.request.isFromBaseUrl()) {
+  Future onError(DioError err,ErrorInterceptorHandler handler) async {
+    if (err.type == DioErrorType.response && await err.response.requestOptions.isFromBaseUrl()) {
       final entity = BaseResponse.tryParse(err.response.data);
 
       if (entity != null) {
         lastTimestamp = entity.timestamp;
 
         return DioError(
-          request: err.request,
+          requestOptions: err.requestOptions,
           response: err.response,
-          type: DioErrorType.RESPONSE,
+          type: DioErrorType.response,
           error: RandomAPIException(
             entity.code,
             message: entity.message,
@@ -83,7 +83,7 @@ class RandomInterceptor extends Interceptor {
       }
     }
 
-    return super.onError(err);
+    return super.onError(err,handler);
   }
 }
 

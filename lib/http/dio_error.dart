@@ -4,13 +4,13 @@ extension RandomDioError on DioError {
 
   String toDisplayText() {
     switch (type) {
-      case DioErrorType.CONNECT_TIMEOUT:
+      case DioErrorType.connectTimeout:
         return 'Connect Timeout';
-      case DioErrorType.SEND_TIMEOUT:
+      case DioErrorType.sendTimeout:
         return 'Send Timeout';
-      case DioErrorType.RECEIVE_TIMEOUT:
+      case DioErrorType.receiveTimeout:
         return 'Receive Timeout';
-      case DioErrorType.RESPONSE:
+      case DioErrorType.response:
         switch (response.statusCode) {
           case 400:
             return '400 Bad Request';
@@ -94,9 +94,9 @@ extension RandomDioError on DioError {
             return '511 Network Authentication Required';
         }
         return 'Response Error, statusCode: ${response.statusCode}';
-      case DioErrorType.CANCEL:
+      case DioErrorType.cancel:
         return 'Request Cancelled';
-      case DioErrorType.DEFAULT:
+      case DioErrorType.other:
         return 'Default Error';
       default:
         return 'Undefined Error';
