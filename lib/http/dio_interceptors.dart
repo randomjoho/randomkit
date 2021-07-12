@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/widgets.dart';
 import 'package:randomkit/entity/response/base_response.dart';
 import 'package:randomkit/exception/api_exception.dart';
 import 'package:randomkit/randomkit.dart';
@@ -35,6 +36,11 @@ class RandomInterceptor extends Interceptor {
 
   @override
   Future onResponse(Response response,ResponseInterceptorHandler handler) async {
+
+    debugPrint('返回: baseurl${RandomKit.config?.apiBaseUrlsGetter}');
+    debugPrint('返回: url ${await response.requestOptions.uri.toString()}');
+    debugPrint('返回: isFromBaseUrl ${await response.requestOptions.isFromBaseUrl()}');
+
     if (await response.requestOptions.isFromBaseUrl()) {
       final entity = BaseResponse.tryParse(response.data);
 
@@ -44,6 +50,7 @@ class RandomInterceptor extends Interceptor {
         if (entity.isSuccess == true) {
           // 抛掉BaseResponse的包装，直接返回result
           response.data = entity.result;
+          handler.resolve(response);
           return response;
         }
 
