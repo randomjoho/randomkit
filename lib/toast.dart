@@ -67,7 +67,7 @@ class RandomToast {
         clickClose = false,
       }) {
     return showIconText(
-      icon: RandomRes.assets_toast_icon_done_png,
+      icon: RandomRes.assets_dialog_success_png,
       text: text,
       crossPage: crossPage,
       clickClose: clickClose,
@@ -80,7 +80,7 @@ class RandomToast {
         clickClose = false,
       }) {
     return showIconText(
-      icon: RandomRes.assets_toast_icon_error_png,
+      icon: RandomRes.assets_dialog_failed_png,
       text: text,
       crossPage: crossPage,
       clickClose: clickClose,

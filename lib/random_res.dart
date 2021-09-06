@@ -4,10 +4,7 @@
 // **************************************************************************
 class RandomRes {
   const RandomRes._();
-  static const String assets_empty = 'assets/empty';
+  static const String assets_dialog_failed_png = 'assets/dialog_failed.png';
 
-  static const String assets_toast_icon_done_png = 'assets/toast_icon_done.png';
-
-  static const String assets_toast_icon_error_png =
-      'assets/toast_icon_error.png';
+  static const String assets_dialog_success_png = 'assets/dialog_success.png';
 }
