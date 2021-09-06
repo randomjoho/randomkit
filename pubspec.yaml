@@ -19,6 +19,7 @@ dependencies:
   dio: ^3.0.10
   # https://pub.dev/packages/dio_flutter_transformer
   dio_flutter_transformer: ^3.0.2
+    
 
   # UI
   # https://pub.dev/packages/bot_toast
